@@ -1,0 +1,15 @@
+.card-header{
+    height:350px;
+}
+@media (max-width:765px ) and (min-width:400px){
+    .card-header{
+        height:450px;
+    }
+
+}
+@media (max-width:399px ) {
+    .card-header{
+        height:300px;
+    }
+
+}
