@@ -7,7 +7,7 @@ const Deliver = ({food}) => {
     // let [total,setTotal] = useContext(CalculateContext)
     const {image,name,Quantity,price,_id}=food
     const handleRemove = () => {
-        fetch(`http://localhost:5000/delete/${_id}`,{
+        fetch(`https://whispering-thicket-80285.herokuapp.com/delete/${_id}`,{
             method: 'DELETE'
         })
 
@@ -18,9 +18,9 @@ const Deliver = ({food}) => {
             <div className="d-flex justify-content-end align-items-end mt-3 mr-4 text-center">
                         <button className="mt-3" onClick={handleRemove}><FontAwesomeIcon icon={faTimes} className='text-danger text-right'></FontAwesomeIcon></button>
                         </div>
-            <div className="d-flex  ml-5 mr-3 mb-5">
+            <div className="d-flex  ml-md-5 ml-2 mr-3 mb-5">
                        
-                        <img src={image} className='w-25 ml-2 mb-3' alt="" srcset="" />
+                        <img src={image} className='w-25 ml-md-2 ml-0 mb-3' alt="" srcset="" />
                         
                         <div className="d-flex flex-column ml-5 " style={{ lineHeight: '10px' }}>
 

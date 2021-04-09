@@ -5,7 +5,7 @@ const Admin = () => {
     const [imageURL,setImageURL] = useState(null)
     const [formData,setFormData] = useState({})
     const handleAddProduct = () => {
-        fetch('http://localhost:5000/addFoods',{
+        fetch('https://whispering-thicket-80285.herokuapp.com/addFoods',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'

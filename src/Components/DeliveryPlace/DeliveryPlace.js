@@ -28,9 +28,9 @@ const DeliveryPlace = () => {
               <h3 className='text-dark mt-3'>Resturant Gulshan Plaza 1214</h3>
               <h1 className='mt-3'>{time}</h1>
               <p className='text-muted'>Estimated delivery time</p>
-              <div className='bg-success text-center mb-3'>
-                  <h4>{rider}</h4>
-                  <p className=' text-white mb-3'>Your Rider</p>
+              <div className='bg-secondary text-center mb-3 pt-3 pb-3 rounded'>
+                  <h2 className='text-white'>{rider}</h2>
+                  <p className=' text-warning mb-3'>Your Rider</p>
               </div>
               <Link to='/calling' className='text-white'>
               <button className='btn btn-danger w-100 mb-3'>Contact</button>

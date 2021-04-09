@@ -6,7 +6,7 @@ const CartItem = ({carts}) => {
     const {name,price,Quantity,_id} = carts;
     const totalPrice = Quantity * parseInt(price);
     const handleRemove = () => {
-        fetch(`http://localhost:5000/delete/${_id}`,{
+        fetch(`https://whispering-thicket-80285.herokuapp.com/delete/${_id}`,{
             method: 'DELETE'
         })
 

@@ -45,10 +45,10 @@ function App() {
       <Headers></Headers>
       
         <Switch>
-        {/* <Route exact path='/'>
+       <Route exact path='/'>
         <SearchBar></SearchBar>
            <BreakFast></BreakFast>
-         </Route> */}
+         </Route> 
         <Route path='/home'>
         <SearchBar></SearchBar>
            <BreakFast></BreakFast>
@@ -85,6 +85,11 @@ function App() {
          </Route>
          <Route path='/calling'>
            <Calling></Calling>
+         </Route>
+         <Route path='*'>
+           <h3 className="text-danger text-center " style={{backgroundColor:'white',height:'100vh'}}>
+             404-Link not found
+           </h3>
          </Route>
         </Switch>
       </Router>

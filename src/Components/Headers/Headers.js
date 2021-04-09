@@ -12,7 +12,7 @@ const Headers = () => {
     const [order,setOrder] = useState([])
     
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://whispering-thicket-80285.herokuapp.com/orders')
         .then(response => response.json())
         .then(data =>setOrders(data))
 
@@ -23,7 +23,7 @@ const Headers = () => {
         <div className='bg-white'>
             <Navbar className="d-flex justify-content-between" expand="lg">
            
-                <Navbar.Brand><span className="brand">KHIDA</span> LAGSE <p>Restaurant</p></Navbar.Brand>
+                <Navbar.Brand as={Link} to='/home'><span className="brand">KHIDA</span> LAGSE <p>Restaurant</p></Navbar.Brand>
                 <div>
                 <Link to='/cart' className='ml-5'>
                    <FontAwesomeIcon icon={faShoppingCart} className='mt-3 mr-1 text-dark'></FontAwesomeIcon>{

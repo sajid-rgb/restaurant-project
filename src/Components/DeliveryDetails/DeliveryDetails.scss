@@ -24,6 +24,9 @@
 .tax{
     color:rgb(189, 178, 26);
 }
+.link-disable{
+    pointer-events: none;
+}
 @media (max-width:600px){
     .form h3{
         margin-left: 60px;
