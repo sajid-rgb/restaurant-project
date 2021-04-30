@@ -33,8 +33,8 @@ const Cart = ({ count }) => {
                 {
                     orders.length > 0 && <tr className='d-flex justify-content-between mx-auto ml-5 container'>
                         <th className='w-100'>Name</th>
-                        <th className='w-100'>Quantity</th>
-                        <th className='w-50'>Price</th>
+                        <th className='w-100 mr-4'>Quantity</th>
+                        <th className='w-50 mr-3'>Price</th>
                     </tr>
                 }
                 <div className="container">

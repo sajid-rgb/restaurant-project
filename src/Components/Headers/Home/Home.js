@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { UserContent } from '../../../App';
+import { HideContext } from '../../../App';
 import Cart from '../../Cart/Cart';
 import Loading from '../../Loading/Loading';
 import Lunch from '../../Lunch/Lunch';
@@ -8,7 +8,7 @@ import Resturant from '../../Resturant/Resturant';
 
 const Home = () => {
     const [foods, setFoods] = useState([])
-    const [count, setCount] = useContext(UserContent)
+    const [isHide,setIsHide] = useContext(HideContext)
     const [isLoading,setIsLoading]=useState(true)
     useEffect(() => {
         fetch('https://whispering-thicket-80285.herokuapp.com/foods')
@@ -19,12 +19,6 @@ const Home = () => {
             })
     })
     const lunchFood = foods.filter(fd => fd.category === 'Lunch')
-    const handleCart = (item) => {
-        const newCount = [...count, item]
-        localStorage.setItem('key', JSON.stringify(newCount))
-        setCount(newCount)
-
-    }
     return (
         <div className='container text-center mx-auto mt-5'>
             {
@@ -35,8 +29,8 @@ const Home = () => {
 
             <div className='row container mx-auto mt-4'>
 
-                {
-                    lunchFood.map(food => <Lunch key={food._id} food={food} handleCart={handleCart}></Lunch>)
+                { isHide &&
+                    lunchFood.map(food => <Lunch key={food._id} food={food}></Lunch>)
                 }
                 <Resturant></Resturant>
             </div>

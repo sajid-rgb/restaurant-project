@@ -4,18 +4,18 @@ import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const DinnerFood = ({food}) => {
-    const {name,image,price,_id}= food
+const Main = ({food}) => {
+    const {image,price,name,_id} = food;
     const [isFavorite,setIsFavorite] = useState(false)
     const handleFavorite = ()=>{
         setIsFavorite(!isFavorite)
 
     }
     return (
-<div className='col-lg-4 col-md-6 mt-3 mb-4 '>
+        <div className='col-lg-4 col-md-6 mt-3 mb-3 '>
 
             
-        <Card className='text-center align-items-center justify-content-center'>
+        <Card className='text-center align-items-center justify-content-center card'>
         
 
             <Card.Header className='card-header d-flex align-items-center justify-content-center bg-dark' >
@@ -36,16 +36,17 @@ const DinnerFood = ({food}) => {
                 
             </Card.Body>
              
-            <div className="d-flex">
+            <div className="d-flex ">
             <Link to={`/foods/${_id}`} style={{textDecoration:'none'}}>
-            <button className='btn btn-primary w-100 mb-3 mr-3' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+            <button className='btn btn-primary w-100 mb-3 mr-5' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </Link> 
             </div>
         </Card>
        
             
         </div>
+
     );
 };
 
-export default DinnerFood;
+export default Main;

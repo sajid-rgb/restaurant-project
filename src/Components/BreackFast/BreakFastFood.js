@@ -23,7 +23,7 @@ const BreakFastFood = ({food}) => {
             <Card.Img src={image} ></Card.Img>
             </Link>
             </Card.Header>
-            <Card.Body className='mt-2 text-dark' style={{height: '100px',textAlign: 'center'}}>
+            <Card.Body className='mt-2 text-dark' style={{height: '80px',textAlign: 'center'}}>
                 <div className="d-flex text-center justify-content-center">
                 <Link to={`/foods/${_id}`} style={{textDecoration:'none'}} className="text-dark">
                 <Card.Title style={{fontSize: '16px'}}>{name}</Card.Title>
@@ -38,7 +38,7 @@ const BreakFastFood = ({food}) => {
              
             <div className="d-flex">
             <Link to={`/foods/${_id}`} style={{textDecoration:'none'}}>
-            <button className='btn btn-primary w-100 mb-3 mt-3' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+            <button className='btn btn-primary w-100 mb-3 mt-0' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </Link> 
             </div>
         </Card>

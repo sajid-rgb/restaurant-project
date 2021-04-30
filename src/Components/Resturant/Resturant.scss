@@ -9,7 +9,7 @@
     color: orangered;
 }
 .resturant{
-    color:rgb(9, 122, 9);
+    color:rgb(39, 9, 122);
     
 }
 @media (max-width:450px){
@@ -19,6 +19,10 @@
         text-transform: uppercase;
         font-weight: bold;
         font-size:30px;
+    }
+    .resturant{
+        font-size: 15px;
+        
     }
 
 }

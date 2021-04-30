@@ -15,7 +15,7 @@ const CartItem = ({carts}) => {
         <div>
             <tr className='d-flex justify-content-between'>
                 <td className='w-100 '>{name}</td>
-                <td  className='w-100 '>{Quantity}</td>
+                <td  className='w-100 ml-4'>{Quantity}</td>
                 <td  className='w-50 '>{totalPrice} <FontAwesomeIcon icon={faTimes} className='text-danger ml-4' style={{cursor:'pointer'}} onClick={handleRemove}/></td>
             </tr>
         </div>

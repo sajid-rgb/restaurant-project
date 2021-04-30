@@ -20,7 +20,7 @@ const Resturant = () => {
                <Card.Title>
                    Healthy Cooking
                </Card.Title>
-               <Card.Text>
+               <Card.Text className="text-justify">
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eos deleniti magnam enim temporibus at delectus quis nesciunt reprehenderit porro.
                </Card.Text>
                </Card.Body>
@@ -34,7 +34,7 @@ const Resturant = () => {
                <Card.Title>
                    Free Environment
                </Card.Title>
-               <Card.Text>
+               <Card.Text className="text-justify">
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eos deleniti magnam enim temporibus at delectus quis nesciunt reprehenderit porro.
                </Card.Text>
                </Card.Body>
@@ -48,7 +48,7 @@ const Resturant = () => {
                <Card.Title>
                    Quick Delivery
                </Card.Title>
-               <Card.Text>
+               <Card.Text className="text-justify">
                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eos deleniti magnam enim temporibus at delectus quis nesciunt reprehenderit porro.
                </Card.Text>
                </Card.Body>

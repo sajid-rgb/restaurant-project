@@ -12,10 +12,10 @@ const Lunch = ({food,handleCart}) => {
 
     }
     return (
-<div className='col-lg-4 col-md-6 mt-3 mb-4 '>
+<div className='col-lg-4 col-md-6 mt-3 mb-3 '>
 
             
-        <Card className='text-center align-items-center justify-content-center'>
+        <Card className='text-center align-items-center justify-content-center card'>
         
 
             <Card.Header className='card-header d-flex align-items-center justify-content-center bg-dark' >
@@ -23,7 +23,7 @@ const Lunch = ({food,handleCart}) => {
             <Card.Img src={image} ></Card.Img>
             </Link>
             </Card.Header>
-            <Card.Body className='mt-2 text-dark' style={{height: '100px',textAlign: 'center'}}>
+            <Card.Body className='mt-2 text-dark' style={{height: '80px',textAlign: 'center'}}>
                 <div className="d-flex text-center justify-content-center">
                 <Link to={`/foods/${_id}`} style={{textDecoration:'none'}} className="text-dark">
                 <Card.Title style={{fontSize: '16px'}}>{name}</Card.Title>
@@ -36,9 +36,9 @@ const Lunch = ({food,handleCart}) => {
                 
             </Card.Body>
              
-            <div className="d-flex">
+            <div className="d-flex ">
             <Link to={`/foods/${_id}`} style={{textDecoration:'none'}}>
-            <button className='btn btn-primary w-100 mb-3 mt-3' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+            <button className='btn btn-primary w-100 mb-3 mr-5' >Order Now <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </Link> 
             </div>
         </Card>

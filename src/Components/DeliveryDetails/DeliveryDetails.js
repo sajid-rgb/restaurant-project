@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CalculateContext, DeliverContext, FoodContext, OrderPlaceContext, UserContext } from '../../App';
 import Loading from '../Loading/Loading';
 import LoadingTable from '../LoadingTable/LoadingTable';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Deliver from './Deliver';
 import './DeliveryDetails.scss'
 const DeliveryDetails = () => {
@@ -10,6 +11,7 @@ const DeliveryDetails = () => {
     const [item, setItem] = useContext(DeliverContext)
     const [orders, setOrders] = useContext(OrderPlaceContext)
     const { image, name, price } = food
+    const [formHide, setFormHide] = useState(false)
     const [details, setDetails] = useState({
         road: '107 no road',
         house: '',
@@ -73,7 +75,8 @@ const DeliveryDetails = () => {
     const saveAddress = () => {
         if (details.house && details.road && details.flat && details.additional) {
             setSave(true)
-            setButtonDisabled(false)
+            // setButtonDisabled(false)
+            setFormHide(true)
         }
     }
     const handleOrderPlace = () => {
@@ -89,47 +92,58 @@ const DeliveryDetails = () => {
 
     }
     return (
-        <div >
+        <div className='container'>
             {
-                loading ?<div className='text-center mt-5'>
-                     <Loading></Loading>
-                </div>:<div className='row ml-md-3 ml-0 ml-3 mr-3 '>
-                <div className="col-md-7 text-center mt-5 form ">
-                    <h3 className='text-left'>Edit Delivery Details</h3>
-                    <hr />
-                    <input type="text" placeholder='House Name' name='house' onChange={handleChange} className='w-75 ml-md-5 ml-0 rounded input mt-1' /><br />
-                    <input type="text" placeholder='Road Number' name='road' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
-                    <input type="text" placeholder='Flat No.' name='flat' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
-                    <input type="text" placeholder='Aditional Information' name='additional' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
+                loading ? <div className='text-center mt-5'>
+                    <Loading></Loading>
+                </div> : <div className='row ml-md-5 ml-0 ml-3 mr-3 mt-5 container mx-auto'>
                     {
-                        save && <p className='text-center text-success'>Successfully Added</p>
+                        formHide ?
+                            <div className='col-lg-6 text-center mt-5  order'  style={{ height: '100%' }}>
+                                <h6 className='text-dark'>Please enter your card number</h6>
+
+                                <div className='  bg-white  mb-5 text-center  pt-5 order'>
+
+                                    <ProcessPayment buttonDisabled={buttonDisabled} setButtonDisabled={setButtonDisabled}></ProcessPayment>
+                                </div>
+                            </div> : <div className="col-lg-6 text-center form mt-5">
+                                <h3 className='text-left pt-3'>Edit Delivery Details</h3>
+                                <hr />
+                                <input type="text" placeholder='House Name' name='house' onChange={handleChange} className='w-75 ml-md-5 ml-0 rounded input mt-1' /><br />
+                                <input type="text" placeholder='Road Number' name='road' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
+                                <input type="text" placeholder='Flat No.' name='flat' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
+                                <input type="text" placeholder='Additional Information' name='additional' onChange={handleChange} className='w-75 ml-md-5 ml-0 mt-2 rounded input' /><br />
+                                {
+                                    save && <p className='text-center text-success'>Successfully Added</p>
+                                }
+                                <button className='btn btn-danger mt-3 mb-4' onClick={saveAddress}>Save and Continue</button>
+                            </div>
                     }
-                    <button className='btn btn-danger mt-3 mb-4' onClick={saveAddress}>Save and Continue</button>
-                </div>
-                <div className="col-md-5 ">
-                    <div className="ml-3 bg-white mt-5 pb-3 mb-3 mb-md-0 pt-3 rounded shadow">
-                        <h6 className='ml-4 '>From Gulshan Plaza</h6>
-                        <p className='ml-4'>Arriving in 20-30 min </p>
-                        <p className='ml-4'>  {details.house}  {details.flat} {details.road} {details.additional}</p>
-                        {
-                            itemOrders.map(food => <Deliver food={food}></Deliver>)
-                        }
-                        <div className="ml-0 mr-5 text-center">
-                            <h5 className="tax">Tax   <span className="ml-5">${tax}</span></h5>
-    
-                            <h4 className='mr-2 total'>Total <span className="ml-4">${payTotal}</span></h4>
+                    <div className="col-lg-6  rounded mt-1 mt-lg-5 mb-3">
+                        <div className="ml-md-3 ml-0 bg-white mt-md-0 mt-2 pb-3 mb-3 mb-md-0 pt-3  order">
+                            <h6 className='ml-4 '>From Gulshan Plaza</h6>
+                            <p className='ml-4'>Arriving in 20-30 min </p>
+                            <p className='ml-4'>  {details.house}  {details.flat} {details.road} {details.additional}</p>
                             {
-                                buttonDisabled && <p className='text-danger'>* First fill the address correctly</p>
+                                itemOrders.map(food => <Deliver food={food}></Deliver>)
                             }
-                            {
-                                buttonDisabled ? <Link to='/orders' className='text-white link-disable'><button as={Link} to='/orders' className='btn btn-danger mt-0 disabled' onClick={handleOrderPlace}>Order Place</button></Link> : <Link to='/orders' className='text-white'><button as={Link} to='/orders' className='btn btn-danger mt-0' onClick={handleOrderPlace}>Order Place</button></Link>
-                            }
+                            <div className="ml-0 mr-5 text-center">
+                                <h5 className="tax">Tax   <span className="ml-5">${tax}</span></h5>
+
+                                <h4 className='mr-2 total'>Total <span className="ml-4">${payTotal}</span></h4>
+                                {
+                                    buttonDisabled && <p className='text-danger text-center'>* First fill the address correctly</p>
+                                }
+                                {
+                                    buttonDisabled ? <Link to='/orders' className='text-white link-disable'><button as={Link} to='/orders' className='btn btn-danger mt-0 ml-3 ml-md-0 disabled' onClick={handleOrderPlace}>Order Place</button></Link> : <Link to='/orders' className='text-white'><button as={Link} to='/orders' className='btn btn-danger mt-0 ml-3 ml-md-0' onClick={handleOrderPlace}>Order Place</button></Link>
+                                }
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
             }
+
         </div>
     );
 };
