@@ -20,9 +20,9 @@ const Headers = () => {
     const orders = fullOrders.filter(or=>or.email===loggedInUser.email)
     const handleSignOut=()=>{
         setLoggedInUser({})
-        localStorage.removeItem('token')
-        localStorage.removeItem('login')
-        localStorage.removeItem('email')
+        // localStorage.removeItem('token')
+        // localStorage.removeItem('login')
+        // localStorage.removeItem('email')
 
 
     }
@@ -48,7 +48,7 @@ const Headers = () => {
   <Nav > 
   <Navbar.Collapse id="basic-navbar-nav"> 
                <Nav.Link as={Link} to='/home' className="home"><span>Home</span></Nav.Link> 
-                <Nav.Link as={Link} to='/admin' className="admin disabled" >Admin</Nav.Link>
+                <Nav.Link as={Link} to='/admin' className="admin " >Admin</Nav.Link>
                 {
                     loggedInUser.isSignIn || localStorage.getItem('login')? <Nav.Link as={Link} to='/login' onClick={()=>handleSignOut()}>Sign out</Nav.Link> : <Nav.Link as={Link} to='/login'>Sign in</Nav.Link>
                 }

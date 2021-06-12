@@ -9,13 +9,13 @@ const HomePage = () => {
     return (
         <Carousel>
           <Carousel.Item>
-          <div className="row container bg-success mx-auto mb-3 rounded offer-food">
+          <div className="row container bg-dark  mx-auto mb-3 rounded offer-food">
             
             <div className="col-md-5 d-flex flex-column align-content-center justify-content-center">
                <h3 className="food-name ml-md-4 mt-3 mt-md-0">
                    CHICKEN BIRIYANI
                </h3>
-               <h3 className="text-left ml-md-4">20% Off</h3>
+               <h3 className="text-left ml-md-4 text-white">20% Off</h3>
                <h2 className="text-warning ml-md-4">$<del className='ml-2'>24</del><span className='text-white ml-2'>14</span></h2>
                <Link to="/orderHomePage" className="text-white">
                <button className='btn btn-primary w-50 ml-md-4'>Order Now</button>
@@ -27,13 +27,13 @@ const HomePage = () => {
         </div>
           </Carousel.Item>
           <Carousel.Item>
-          <div className="row container bg-success mx-auto mb-3 rounded offer-food">
+          <div className="row container bg-dark mx-auto mb-3 rounded offer-food">
             
             <div className="col-md-5 d-flex flex-column align-content-center justify-content-center">
                <h3 className=" ml-md-4 mt-3 mt-md-0 food-name">
                    CANADIAN NACHOS
                </h3>
-               <h3 className="text-left ml-md-4 ">24 hours available</h3>
+               <h3 className="text-left ml-md-4 text-white">24 hours available</h3>
                <h2 className="text-warning ml-md-4">$5</h2>
                <Link to="/orderHomePage" className="text-white">
                <button className='btn btn-primary w-50 ml-md-4'>Order Now</button>
@@ -45,13 +45,13 @@ const HomePage = () => {
         </div>
           </Carousel.Item>
           <Carousel.Item>
-          <div className="row  container bg-success mx-auto mb-3 rounded offer-food">
+          <div className="row  container bg-dark mx-auto mb-3 rounded offer-food">
             
             <div className="col-md-5 d-flex flex-column align-content-center justify-content-center">
                <h3 className="food-name ml-md-4 mt-3 mt-md-0">
                    SPANISH THALI
                </h3>
-               <h3 className="text-left ml-md-4">Buy one get one free</h3>
+               <h3 className="text-left ml-md-4 text-white">Buy one get one free</h3>
                <h2 className="text-warning ml-md-4">$14</h2>
                <Link to="/orderHomePage" className="text-white">
                <button className='btn btn-primary w-50 ml-md-4'>Order Now</button>

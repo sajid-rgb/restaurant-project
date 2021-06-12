@@ -45,12 +45,12 @@ const Admin = () => {
     }
     return (
         <div>
-             <div>
-            <input type="text" placeholder="Enter food name" name='name' onBlur={handleFormChange}/><br/>
-            <input type="text" placeholder="Enter Price" name='price' onBlur={handleFormChange}/><br/>
-            <input type="text" placeholder="Enter Category" name='category' onBlur={handleFormChange}/><br/>
-            <input type="file" onBlur={handleChangeImage}/>
-            <button onClick={handleAddProduct}>Add food</button>
+             <div className='text-center mt-5'>
+            <input type="text" placeholder="Enter food name" name='name' onBlur={handleFormChange} className="w-50 mt-3 rounded"/><br/>
+            <input type="text" placeholder="Enter Price" name='price' onBlur={handleFormChange} className="w-50 mt-3 rounded"/><br/>
+            <input type="text" placeholder="Enter Category" name='category' onBlur={handleFormChange} className="w-50 mt-3 rounded"/><br/>
+            <input type="file" onBlur={handleChangeImage} className='mt-3'/> <br/>
+            <button onClick={handleAddProduct} className="w-25 mt-3 btn-danger">Add food</button>
         </div>
         </div>
     );

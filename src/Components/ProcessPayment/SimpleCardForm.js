@@ -45,7 +45,7 @@ const SimpleCardForm = ({buttonDisabled,setButtonDisabled}) => {
    
   // }
     return (
-        <div>
+        <div className="bg-light">
             <form onSubmit={handleSubmit}>
           <CardElement /> 
           <button type="submit" disabled={!stripe} className='btn btn-danger text-white mb-2 mt-lg-0 mt-3' >

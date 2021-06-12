@@ -23,14 +23,14 @@ const Login = () => {
     let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } }
-  const handleIdToken=()=>{
-    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
-    .then(function(idToken) {
-        localStorage.setItem('token',idToken)
-      }).catch(function(error) {
-        // Handle error
-      });
-  }
+//   const handleIdToken=()=>{
+//     firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+//     .then(function(idToken) {
+//         localStorage.setItem('token',idToken)
+//       }).catch(function(error) {
+//         // Handle error
+//       });
+//   }
     const handleGoogleSignIn = (event) => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(googleProvider)
@@ -39,11 +39,11 @@ const Login = () => {
                 signInUser.name=user.displayName;
                 signInUser.email=user.email;
                 signInUser.image=user.photoURL
-                handleIdToken()
-                localStorage.setItem('email',signInUser.email)
+                // handleIdToken()
+                // localStorage.setItem('email',signInUser.email)
                 setSignInUser(signInUser)
                 signInUser.isSignIn=true
-                localStorage.setItem('login',signInUser.isSignIn)
+                // localStorage.setItem('login',signInUser.isSignIn)
                 setLoggedInUser(signInUser)
                 history.replace(from);
             })

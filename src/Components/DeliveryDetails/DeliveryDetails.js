@@ -99,10 +99,10 @@ const DeliveryDetails = () => {
                 </div> : <div className='row ml-md-5 ml-0 ml-3 mr-3 mt-5 container mx-auto'>
                     {
                         formHide ?
-                            <div className='col-lg-6 text-center mt-5  order'  style={{ height: '100%' }}>
+                            <div className='col-lg-6 text-center mt-5  order bg-light rounded'  style={{ height: '100%' }}>
                                 <h6 className='text-dark'>Please enter your card number</h6>
 
-                                <div className='  bg-white  mb-5 text-center  pt-5 order'>
+                                <div className=' bg-white  mb-5 text-center  pt-5 order'>
 
                                     <ProcessPayment buttonDisabled={buttonDisabled} setButtonDisabled={setButtonDisabled}></ProcessPayment>
                                 </div>
